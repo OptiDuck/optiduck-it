@@ -1,0 +1,1160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #17212b;
+}
+
+::selection {
+  background: #ffefd4;
+  color: #17212b;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2;
+  }
+}
+
+.offer-document {
+  min-height: 100vh;
+  background: #e5e9ed;
+  padding: 32px 0 48px;
+}
+
+.offer-screen-toolbar {
+  display: flex;
+  width: min(210mm, calc(100vw - 32px));
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 14px 18px;
+  color: #17212b;
+  box-shadow: 0 12px 28px -22px rgba(17, 24, 32, 0.42);
+}
+
+.offer-screen-toolbar strong,
+.offer-screen-toolbar span {
+  display: block;
+}
+
+.offer-screen-toolbar span {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.offer-page {
+  position: relative;
+  display: flex;
+  width: 210mm;
+  min-height: 297mm;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  background: #ffffff;
+  color: #334155;
+  padding: 16mm 17mm 15mm;
+  box-shadow: 0 22px 60px -36px rgba(17, 24, 32, 0.55);
+}
+
+.offer-page-dark {
+  background:
+    radial-gradient(circle at 86% 12%, rgba(239, 141, 34, 0.17), transparent 26%),
+    #10101a;
+  color: #d5dde6;
+}
+
+.offer-page-header {
+  display: flex;
+  min-height: 15mm;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10mm;
+  border-radius: 2.5mm;
+  background: #10101a;
+  padding: 3.5mm 4mm;
+}
+
+.offer-logo {
+  width: 54mm;
+  height: auto;
+  object-fit: contain;
+  object-position: left top;
+}
+
+.offer-header-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #cbd5e1;
+  font-size: 7.5pt;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.offer-page-content {
+  flex: 1;
+  padding-top: 11mm;
+}
+
+.offer-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.35mm solid rgba(148, 163, 184, 0.3);
+  padding-top: 3mm;
+  color: #64748b;
+  font-size: 7pt;
+  font-weight: 700;
+}
+
+.offer-page-dark .offer-page-footer {
+  color: #cbd5e1;
+}
+
+.offer-eyebrow {
+  margin: 0;
+  color: #dc7610;
+  font-size: 7.5pt;
+  font-weight: 800;
+  letter-spacing: 1.5pt;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.offer-page-dark .offer-eyebrow {
+  color: #ef8d22;
+}
+
+.offer-cover h1,
+.offer-final h2 {
+  margin: 5mm 0 0;
+  color: #ffffff;
+  font-size: 31pt;
+  letter-spacing: -1.1pt;
+  line-height: 1.02;
+}
+
+.offer-cover-subtitle {
+  margin: 2.5mm 0 0;
+  color: #ef8d22;
+  font-size: 16pt;
+  font-weight: 700;
+  letter-spacing: -0.3pt;
+}
+
+.offer-cover-lead {
+  max-width: 142mm;
+  margin: 10mm 0 0;
+  color: #ffffff;
+  font-size: 15pt;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.offer-cover-copy {
+  max-width: 152mm;
+  margin: 4mm 0 0;
+  color: #cbd5e1;
+  font-size: 10pt;
+  line-height: 1.62;
+}
+
+.offer-info-grid {
+  display: grid;
+  margin-top: 8mm;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+}
+
+.offer-info-card {
+  border: 0.35mm solid #e2e8f0;
+  border-radius: 2.5mm;
+  background: #ffffff;
+  padding: 3.5mm;
+}
+
+.offer-page-dark .offer-info-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.offer-info-card span,
+.offer-provider-card span,
+.offer-goal span,
+.offer-final-price span,
+.offer-price-note span {
+  display: block;
+  color: #dc7610;
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 1pt;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.offer-page-dark .offer-info-card span,
+.offer-page-dark .offer-provider-card span,
+.offer-page-dark .offer-final-price span {
+  color: #ef8d22;
+}
+
+.offer-info-card strong {
+  display: block;
+  margin-top: 1.5mm;
+  color: #17212b;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+
+.offer-page-dark .offer-info-card strong {
+  color: #ffffff;
+}
+
+.offer-provider-card {
+  margin-top: 4mm;
+  border-left: 1mm solid #ef8d22;
+  padding: 1.5mm 0 1.5mm 3mm;
+}
+
+.offer-provider-card strong {
+  display: block;
+  margin-top: 1mm;
+  color: #ffffff;
+  font-size: 11pt;
+}
+
+.offer-section-block {
+  color: #475569;
+}
+
+.offer-section-on-dark {
+  margin-top: 12mm;
+  border-top: 0.35mm solid rgba(255, 255, 255, 0.17);
+  padding-top: 8mm;
+  color: #cbd5e1;
+}
+
+.offer-section-title {
+  margin: 3mm 0 0;
+  color: #17212b;
+  font-size: 22pt;
+  letter-spacing: -0.55pt;
+  line-height: 1.08;
+}
+
+.offer-page-dark .offer-section-title {
+  color: #ffffff;
+}
+
+.offer-section-block > p {
+  margin: 3.5mm 0 0;
+  font-size: 9.5pt;
+  line-height: 1.6;
+}
+
+.offer-section-block h3 {
+  margin: 5mm 0 0;
+  color: #17212b;
+  font-size: 11pt;
+  line-height: 1.3;
+}
+
+.offer-page-dark .offer-section-block h3 {
+  color: #ffffff;
+}
+
+.offer-tick-list {
+  display: grid;
+  gap: 2.2mm;
+  margin: 4mm 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer-list-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 7mm;
+}
+
+.offer-tick-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4mm;
+  color: inherit;
+  font-size: 8.8pt;
+  line-height: 1.35;
+}
+
+.offer-tick-icon {
+  width: 3.7mm;
+  height: 3.7mm;
+  flex: 0 0 auto;
+  color: #dc7610;
+}
+
+.offer-page-dark .offer-tick-icon {
+  color: #ef8d22;
+}
+
+.offer-note {
+  margin-top: 5mm;
+  border-radius: 2.5mm;
+  background: #fff8ed;
+  padding: 3.4mm 4mm;
+  color: #87420b;
+  font-size: 8.7pt;
+  line-height: 1.5;
+}
+
+.offer-page-dark .offer-note {
+  border: 0.35mm solid rgba(239, 141, 34, 0.28);
+  background: rgba(239, 141, 34, 0.1);
+  color: #ffdfb0;
+}
+
+.offer-spaced {
+  margin-top: 13mm;
+}
+
+.offer-goal {
+  margin-top: 5mm;
+  border-left: 1mm solid #ef8d22;
+  background: #fff8ed;
+  padding: 3.5mm 4mm;
+}
+
+.offer-goal strong {
+  display: block;
+  margin-top: 1mm;
+  color: #17212b;
+  font-size: 9.5pt;
+  line-height: 1.45;
+}
+
+.offer-step-list {
+  display: grid;
+  gap: 3mm;
+  margin: 5mm 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer-step-list li {
+  display: grid;
+  grid-template-columns: 9mm 1fr;
+  gap: 3mm;
+  border: 0.35mm solid #e2e8f0;
+  border-radius: 2.5mm;
+  background: #f8fafc;
+  padding: 3mm;
+}
+
+.offer-step-list li > span {
+  display: flex;
+  width: 8mm;
+  height: 8mm;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2mm;
+  background: #ffefd4;
+  color: #b95b0c;
+  font-size: 7.5pt;
+  font-weight: 800;
+}
+
+.offer-step-list h3 {
+  margin: 0;
+  font-size: 10pt;
+}
+
+.offer-step-list p {
+  margin: 1.5mm 0 0;
+  color: #64748b;
+  font-size: 8.2pt;
+  line-height: 1.45;
+}
+
+.offer-usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4mm;
+  margin-top: 5mm;
+}
+
+.offer-usecase-grid article {
+  border: 0.35mm solid #e2e8f0;
+  border-radius: 3mm;
+  background: #f8fafc;
+  padding: 4mm;
+}
+
+.offer-usecase-grid h3 {
+  margin: 0;
+}
+
+.offer-usecase-grid .offer-tick-list {
+  gap: 1.8mm;
+  margin-top: 3mm;
+}
+
+.offer-usecase-grid .offer-tick-list li {
+  color: #64748b;
+  font-size: 8pt;
+}
+
+.offer-price-note {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  margin: 5mm 0 0 !important;
+  border-radius: 2.5mm;
+  background: #17212b;
+  padding: 3mm 4mm;
+}
+
+.offer-price-note span {
+  color: #ef8d22;
+}
+
+.offer-price-note strong {
+  color: #ffffff;
+  font-size: 13pt;
+}
+
+.offer-price-note small {
+  color: #cbd5e1;
+  font-size: 8pt;
+}
+
+.offer-final h2 {
+  font-size: 34pt;
+}
+
+.offer-final-intro {
+  max-width: 150mm;
+  margin: 4mm 0 0;
+  color: #cbd5e1;
+  font-size: 12pt;
+  line-height: 1.55;
+}
+
+.offer-final-price {
+  margin-top: 12mm;
+  border-radius: 4mm;
+  background: #ef8d22;
+  padding: 6mm;
+}
+
+.offer-final-price span {
+  color: #442000;
+}
+
+.offer-final-price strong {
+  display: block;
+  margin-top: 1mm;
+  color: #10101a;
+  font-size: 28pt;
+  letter-spacing: -0.6pt;
+}
+
+.offer-final-facts {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 4mm;
+  margin-top: 4mm;
+}
+
+.offer-final-included {
+  margin-top: 9mm;
+}
+
+.offer-final-included h3,
+.offer-booking h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 17pt;
+}
+
+.offer-final-included .offer-tick-list {
+  margin-top: 4mm;
+}
+
+.offer-booking {
+  margin-top: 11mm;
+  border-top: 0.35mm solid rgba(255, 255, 255, 0.17);
+  padding-top: 7mm;
+}
+
+.offer-booking h3 {
+  margin-top: 2mm;
+}
+
+.offer-booking p {
+  max-width: 150mm;
+  margin: 3mm 0 0;
+  color: #cbd5e1;
+  font-size: 9.5pt;
+  line-height: 1.55;
+}
+
+.offer-contact-card {
+  display: grid;
+  width: 92mm;
+  gap: 1.3mm;
+  margin-top: 5mm;
+  border-left: 1mm solid #ef8d22;
+  padding-left: 4mm;
+  font-size: 10pt;
+  line-height: 1.35;
+}
+
+.offer-contact-card strong {
+  color: #ffffff;
+  font-size: 12pt;
+}
+
+.offer-contact-card span {
+  color: #cbd5e1;
+}
+
+.offer-contact-card a {
+  color: #ef8d22;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .offer-document {
+    overflow-x: auto;
+    padding: 16px 0 28px;
+  }
+
+  .offer-screen-toolbar {
+    width: 210mm;
+    margin-left: 12px;
+  }
+
+  .offer-page {
+    margin-left: 12px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    min-height: auto;
+    background: #ffffff !important;
+  }
+
+  .offer-document {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .offer-screen-toolbar {
+    display: none !important;
+  }
+
+  .offer-page {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    break-after: page;
+    page-break-after: always;
+    margin: 0;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .offer-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}
+
+.businessplan-document {
+  min-height: 100vh;
+  overflow-x: auto;
+  background: #e9edf0;
+  padding: 24px 0 44px;
+}
+
+.businessplan-screen-toolbar {
+  display: flex;
+  width: 210mm;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 auto 18px;
+  border-radius: 12px;
+  background: #17212b;
+  padding: 14px 18px;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+}
+
+.businessplan-screen-toolbar div {
+  display: grid;
+  gap: 2px;
+}
+
+.businessplan-screen-toolbar strong {
+  font-size: 14px;
+}
+
+.businessplan-screen-toolbar span {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.businessplan-page {
+  position: relative;
+  display: flex;
+  width: 210mm;
+  min-height: 297mm;
+  flex-direction: column;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  background: #ffffff;
+  color: #26323d;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.13);
+}
+
+.businessplan-page-dark {
+  background: #17212b;
+  color: #e2e8f0;
+}
+
+.businessplan-page-header {
+  display: flex;
+  min-height: 25mm;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8mm;
+  border-bottom: 0.35mm solid #e2e8f0;
+  padding: 5mm 17mm 4mm;
+}
+
+.businessplan-page-dark .businessplan-page-header {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.businessplan-logo {
+  width: 49mm;
+  height: auto;
+  object-fit: contain;
+}
+
+.businessplan-header-meta {
+  display: grid;
+  gap: 1.2mm;
+  color: #64748b;
+  font-size: 7.5pt;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.businessplan-page-dark .businessplan-header-meta {
+  color: #cbd5e1;
+}
+
+.businessplan-page-content {
+  flex: 1;
+  padding: 13mm 17mm 11mm;
+  font-size: 9.15pt;
+  line-height: 1.53;
+}
+
+.businessplan-page-content p {
+  margin: 0 0 4mm;
+}
+
+.businessplan-page-footer {
+  display: flex;
+  min-height: 11mm;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.35mm solid #e2e8f0;
+  padding: 2.5mm 17mm;
+  color: #64748b;
+  font-size: 7.2pt;
+}
+
+.businessplan-page-dark .businessplan-page-footer {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #cbd5e1;
+}
+
+.businessplan-eyebrow {
+  margin: 0 0 2.5mm !important;
+  color: #db7b18;
+  font-size: 7.4pt;
+  font-weight: 800;
+  letter-spacing: 1.2pt;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.businessplan-section-title {
+  margin: 0 0 6mm;
+  color: #17212b;
+  font-size: 23pt;
+  letter-spacing: -0.5pt;
+  line-height: 1.08;
+}
+
+.businessplan-page-dark .businessplan-section-title {
+  color: #ffffff;
+}
+
+.businessplan-subsection-title {
+  margin: 6mm 0 3mm;
+  color: #17212b;
+  font-size: 12pt;
+  line-height: 1.2;
+}
+
+.businessplan-page-dark .businessplan-subsection-title {
+  color: #ffffff;
+}
+
+.businessplan-list {
+  display: grid;
+  gap: 2mm;
+  margin: 3mm 0 5mm;
+  padding: 0;
+  list-style: none;
+}
+
+.businessplan-list-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2mm 6mm;
+}
+
+.businessplan-list li {
+  position: relative;
+  padding-left: 4.5mm;
+  break-inside: avoid;
+}
+
+.businessplan-list li::before {
+  position: absolute;
+  top: 0.48em;
+  left: 0;
+  width: 1.8mm;
+  height: 1.8mm;
+  border-radius: 50%;
+  background: #ef8d22;
+  content: "";
+}
+
+.businessplan-highlight {
+  margin: 5mm 0;
+  border-left: 1mm solid #ef8d22;
+  border-radius: 0 2.5mm 2.5mm 0;
+  background: #f8fafc;
+  padding: 4mm 5mm;
+}
+
+.businessplan-highlight strong {
+  color: #17212b;
+  font-size: 10pt;
+}
+
+.businessplan-highlight p:last-child,
+.businessplan-highlight .businessplan-list {
+  margin-bottom: 0;
+}
+
+.businessplan-quote {
+  margin: 6mm 0;
+  border-left: 1.2mm solid #ef8d22;
+  background: #17212b;
+  padding: 5mm 6mm;
+  color: #ffffff;
+  font-size: 15pt;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.businessplan-section-divider {
+  margin: 8mm 0;
+  border-top: 0.35mm solid #e2e8f0;
+}
+
+.businessplan-cover {
+  padding-top: 8mm;
+}
+
+.businessplan-cover h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 48pt;
+  letter-spacing: -1.2pt;
+  line-height: 1;
+}
+
+.businessplan-cover h2 {
+  margin: 4mm 0 0;
+  color: #ef8d22;
+  font-size: 29pt;
+  line-height: 1;
+}
+
+.businessplan-cover-subtitle {
+  max-width: 140mm;
+  margin-top: 5mm !important;
+  color: #cbd5e1;
+  font-size: 15pt;
+  line-height: 1.42;
+}
+
+.businessplan-cover-data {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3mm;
+  margin-top: 14mm;
+}
+
+.businessplan-key-value {
+  display: grid;
+  min-height: 16mm;
+  align-content: center;
+  gap: 1.2mm;
+  border: 0.35mm solid rgba(255, 255, 255, 0.17);
+  border-radius: 2.5mm;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3mm 4mm;
+}
+
+.businessplan-key-value span {
+  color: #cbd5e1;
+  font-size: 7.6pt;
+  font-weight: 700;
+  letter-spacing: 0.8pt;
+  text-transform: uppercase;
+}
+
+.businessplan-key-value strong {
+  color: #ffffff;
+  font-size: 10pt;
+}
+
+.businessplan-cover-note {
+  max-width: 145mm;
+  margin-top: 16mm !important;
+  border-left: 1mm solid #ef8d22;
+  padding-left: 4mm;
+  color: #cbd5e1;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.businessplan-offer-card {
+  margin-bottom: 5mm;
+  border: 0.35mm solid #e2e8f0;
+  border-radius: 3mm;
+  background: #f8fafc;
+  padding: 4mm 5mm;
+  break-inside: avoid;
+}
+
+.businessplan-offer-card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 5mm;
+  margin-bottom: 3mm;
+  border-bottom: 0.35mm solid #e2e8f0;
+  padding-bottom: 2mm;
+}
+
+.businessplan-offer-card h3 {
+  margin: 0;
+  color: #17212b;
+  font-size: 13pt;
+}
+
+.businessplan-offer-card-heading strong {
+  color: #c5680b;
+  font-size: 10pt;
+  text-align: right;
+}
+
+.businessplan-offer-card p {
+  margin-bottom: 3mm;
+}
+
+.businessplan-offer-card .businessplan-list {
+  margin-bottom: 1mm;
+}
+
+.businessplan-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5mm 5mm;
+  margin-bottom: 3mm;
+  color: #64748b;
+  font-size: 8pt;
+  font-weight: 700;
+}
+
+.businessplan-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4mm;
+}
+
+.businessplan-detail-grid article {
+  border: 0.35mm solid #e2e8f0;
+  border-radius: 2.5mm;
+  background: #f8fafc;
+  padding: 4mm;
+  break-inside: avoid;
+}
+
+.businessplan-detail-grid h3 {
+  margin: 0 0 2mm;
+  color: #17212b;
+  font-size: 10.5pt;
+}
+
+.businessplan-detail-grid p {
+  margin: 0;
+  color: #52606d;
+  font-size: 8.7pt;
+}
+
+.businessplan-detail-wide {
+  grid-column: 1 / -1;
+}
+
+.businessplan-detail-grid-compact {
+  gap: 3mm;
+}
+
+.businessplan-detail-grid-compact article {
+  padding: 3.5mm;
+}
+
+.businessplan-risk-grid {
+  display: grid;
+  gap: 3.2mm;
+}
+
+.businessplan-risk-card {
+  border: 0.35mm solid #e2e8f0;
+  border-left: 1mm solid #ef8d22;
+  border-radius: 0 2.5mm 2.5mm 0;
+  padding: 3mm 4mm;
+  break-inside: avoid;
+}
+
+.businessplan-risk-card h3 {
+  margin: 0 0 1.5mm;
+  color: #17212b;
+  font-size: 10.5pt;
+}
+
+.businessplan-risk-card p {
+  margin: 0;
+  color: #52606d;
+  font-size: 8.5pt;
+  line-height: 1.42;
+}
+
+.businessplan-risk-card div {
+  margin-top: 2mm;
+  border-top: 0.35mm solid #e2e8f0;
+  padding-top: 1.8mm;
+}
+
+.businessplan-risk-card div strong {
+  display: block;
+  margin-bottom: 0.8mm;
+  color: #c5680b;
+  font-size: 7.6pt;
+  letter-spacing: 0.6pt;
+  text-transform: uppercase;
+}
+
+.businessplan-timeline {
+  display: grid;
+  gap: 2.5mm;
+  margin-top: 4mm;
+}
+
+.businessplan-timeline article {
+  display: grid;
+  grid-template-columns: 24mm 1fr;
+  align-items: baseline;
+  gap: 4mm;
+  border-left: 1mm solid #ef8d22;
+  background: #f8fafc;
+  padding: 2.5mm 3.5mm;
+}
+
+.businessplan-timeline strong {
+  color: #17212b;
+}
+
+.businessplan-timeline p {
+  margin: 0;
+  color: #52606d;
+}
+
+.businessplan-numbered-list {
+  display: grid;
+  gap: 3.5mm;
+}
+
+.businessplan-numbered-list article {
+  display: grid;
+  grid-template-columns: 9mm 1fr;
+  gap: 3mm;
+  border-bottom: 0.35mm solid #e2e8f0;
+  padding-bottom: 3mm;
+}
+
+.businessplan-numbered-list span {
+  color: #ef8d22;
+  font-size: 16pt;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.businessplan-numbered-list h3 {
+  margin: 0 0 1.2mm;
+  color: #17212b;
+  font-size: 10.5pt;
+}
+
+.businessplan-numbered-list p {
+  margin: 0;
+  color: #52606d;
+  font-size: 8.8pt;
+}
+
+.businessplan-final {
+  padding-top: 3mm;
+}
+
+.businessplan-final > p {
+  max-width: 164mm;
+  color: #d7dee6;
+  font-size: 10pt;
+  line-height: 1.58;
+}
+
+.businessplan-final-contact {
+  display: grid;
+  width: 100mm;
+  gap: 1.5mm;
+  margin-top: 10mm;
+  border-left: 1mm solid #ef8d22;
+  padding-left: 5mm;
+}
+
+.businessplan-final-contact h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 17pt;
+}
+
+.businessplan-final-contact span {
+  color: #cbd5e1;
+}
+
+.businessplan-final-contact a {
+  color: #ef8d22;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .businessplan-document {
+    padding: 16px 0 28px;
+  }
+
+  .businessplan-screen-toolbar {
+    width: 210mm;
+    margin-left: 12px;
+  }
+
+  .businessplan-page {
+    margin-left: 12px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  .businessplan-document {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .businessplan-screen-toolbar {
+    display: none !important;
+  }
+
+  .businessplan-page {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    break-after: page;
+    page-break-after: always;
+    margin: 0;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .businessplan-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}

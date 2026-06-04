@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OptiDuck IT Flyer</title>
+    <style>
+      :root {
+        --dark: #10101a;
+        --ink: #17212b;
+        --muted: #536170;
+        --orange: #ef8d22;
+        --orange-deep: #c9670c;
+        --cream: #fff8ed;
+        --paper: #f8fafc;
+        --line: #dbe2e8;
+        --page-w: 154mm;
+        --page-h: 216mm;
+        --bleed: 3mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #d8dde2;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body.standard {
+        --page-w: 148mm;
+        --page-h: 210mm;
+        --bleed: 0mm;
+      }
+
+      @page {
+        margin: 0;
+      }
+
+      .page {
+        position: relative;
+        width: var(--page-w);
+        height: var(--page-h);
+        overflow: hidden;
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        break-after: auto;
+        page-break-after: auto;
+      }
+
+      .safe {
+        position: absolute;
+        inset: calc(var(--bleed) + 9mm);
+      }
+
+      .front {
+        background:
+          radial-gradient(circle at 88% 18%, rgba(239, 141, 34, 0.16), transparent 24%),
+          radial-gradient(circle at 5% 78%, rgba(255, 255, 255, 0.06), transparent 32%),
+          var(--dark);
+        color: white;
+      }
+
+      .front-logo {
+        display: block;
+        width: 104mm;
+        max-height: 32mm;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .eyebrow {
+        color: var(--orange);
+        font-size: 7.6pt;
+        font-weight: 700;
+        letter-spacing: 1.7pt;
+        line-height: 1.4;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 6mm 0 3mm;
+        font-size: 22pt;
+        letter-spacing: -0.65pt;
+        line-height: 1.02;
+      }
+
+      .lead {
+        margin: 0;
+        max-width: 115mm;
+        color: #d3dbe4;
+        font-size: 10pt;
+        line-height: 1.52;
+      }
+
+      .front-grid {
+        display: grid;
+        grid-template-columns: 1fr 38mm;
+        gap: 6mm;
+        margin-top: 7mm;
+      }
+
+      .benefits {
+        display: grid;
+        gap: 3mm;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .benefits li {
+        position: relative;
+        padding-left: 6mm;
+        color: #eef2f6;
+        font-size: 8.8pt;
+        line-height: 1.35;
+      }
+
+      .benefits li::before {
+        position: absolute;
+        top: -0.25mm;
+        left: 0;
+        color: var(--orange);
+        content: "✓";
+        font-size: 11pt;
+        font-weight: 700;
+      }
+
+      .qr-card {
+        align-self: start;
+        border: 0.3mm solid rgba(255, 255, 255, 0.14);
+        border-radius: 3mm;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 3mm;
+        text-align: center;
+      }
+
+      .qr {
+        display: block;
+        width: 29mm;
+        height: 29mm;
+        margin: auto;
+        border: 2mm solid white;
+        background: white;
+      }
+
+      .qr-label {
+        margin-top: 2mm;
+        color: #f5f7fa;
+        font-size: 7pt;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .qr-url {
+        margin-top: 1mm;
+        color: var(--orange);
+        font-size: 6.2pt;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .cta {
+        position: absolute;
+        right: calc(var(--bleed) + 9mm);
+        bottom: calc(var(--bleed) + 9mm);
+        left: calc(var(--bleed) + 9mm);
+        border-radius: 3mm;
+        background: var(--orange);
+        color: var(--dark);
+        padding: 4mm 5mm;
+      }
+
+      .cta strong {
+        display: block;
+        font-size: 12pt;
+        line-height: 1.12;
+      }
+
+      .cta span {
+        display: block;
+        margin-top: 1.5mm;
+        font-size: 8pt;
+        font-weight: 700;
+      }
+
+      .back {
+        background: var(--paper);
+      }
+
+      .back-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: calc(var(--bleed) + 32mm);
+        background: var(--dark);
+      }
+
+      .back-top img {
+        position: absolute;
+        bottom: 5mm;
+        left: calc(var(--bleed) + 9mm);
+        width: 71mm;
+        max-height: 21mm;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .back-content {
+        top: calc(var(--bleed) + 39mm);
+      }
+
+      h2 {
+        margin: 0 0 2mm;
+        color: var(--ink);
+        font-size: 15pt;
+        letter-spacing: -0.3pt;
+        line-height: 1.08;
+      }
+
+      .intro {
+        margin: 0;
+        color: var(--muted);
+        font-size: 8.8pt;
+        line-height: 1.45;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3mm;
+        margin-top: 5mm;
+      }
+
+      .card {
+        min-height: 30mm;
+        border: 0.3mm solid var(--line);
+        border-radius: 2.5mm;
+        background: white;
+        padding: 4mm;
+      }
+
+      .card h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 9.5pt;
+        line-height: 1.15;
+      }
+
+      .card p {
+        margin: 2mm 0 0;
+        color: var(--muted);
+        font-size: 7.7pt;
+        line-height: 1.42;
+      }
+
+      .workflow {
+        margin-top: 5mm;
+        border-left: 1mm solid var(--orange);
+        padding-left: 4mm;
+      }
+
+      .workflow h3 {
+        margin: 0;
+        font-size: 10pt;
+      }
+
+      .workflow p {
+        margin: 1.5mm 0 0;
+        color: var(--muted);
+        font-size: 8pt;
+        line-height: 1.43;
+      }
+
+      .quote {
+        margin: 5mm 0 0;
+        color: var(--ink);
+        font-size: 11pt;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .back-bottom {
+        position: absolute;
+        right: calc(var(--bleed) + 9mm);
+        bottom: calc(var(--bleed) + 8mm);
+        left: calc(var(--bleed) + 9mm);
+        display: grid;
+        grid-template-columns: 1fr 26mm;
+        align-items: end;
+        gap: 5mm;
+        border-top: 0.45mm solid var(--orange);
+        padding-top: 3mm;
+      }
+
+      .contact {
+        color: var(--muted);
+        font-size: 7.7pt;
+        line-height: 1.5;
+      }
+
+      .contact strong {
+        color: var(--ink);
+        font-size: 8.5pt;
+      }
+
+      .back-qr {
+        width: 26mm;
+        height: 26mm;
+        border: 1.5mm solid white;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page front">
+      <div class="safe">
+        <img class="front-logo" src="../public/optiduck-logo-transparent.png" alt="OptiDuck IT" />
+        <p class="eyebrow">KI-Beratung Münster & Umgebung</p>
+        <h1>Weniger Büroarbeit.<br />Mehr Zeit fürs Kerngeschäft.</h1>
+        <p class="lead">
+          OptiDuck IT entwickelt praxisnahe KI-Workflows und Automationen für kleine und mittlere Unternehmen.
+          Verständlich, überschaubar und passend zu Ihrem Arbeitsalltag.
+        </p>
+
+        <div class="front-grid">
+          <ul class="benefits">
+            <li>Wiederkehrende Aufgaben vereinfachen</li>
+            <li>Kundenanfragen schneller bearbeiten</li>
+            <li>Informationen und Dokumente übersichtlicher organisieren</li>
+            <li>Praktische Lösungen statt KI-Hype</li>
+          </ul>
+          <div class="qr-card">
+            <img class="qr" src="./assets/qr-optiduck.svg" alt="QR-Code zur OptiDuck IT Website" />
+            <div class="qr-label">Website öffnen</div>
+            <div class="qr-url">www.optiduck-it.de</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <strong>Kostenloses Erstgespräch vereinbaren</strong>
+        <span>20 Minuten · unverbindlich · online oder vor Ort in Münster</span>
+      </div>
+    </section>
+
+    <section class="page back">
+      <div class="back-top">
+        <img src="../public/optiduck-logo-transparent.png" alt="OptiDuck IT" />
+      </div>
+
+      <div class="safe back-content">
+        <p class="eyebrow">Wo kann KI sinnvoll helfen?</p>
+        <h2>Automationen beginnen häufig bei ganz alltäglichen Aufgaben.</h2>
+        <p class="intro">
+          Nicht jeder Prozess braucht KI. Entscheidend ist, wo wiederkehrende Arbeit unnötig Zeit kostet.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Kundenkommunikation</h3>
+            <p>Anfragen strukturieren, Antwortentwürfe vorbereiten und Follow-ups organisieren.</p>
+          </div>
+          <div class="card">
+            <h3>Büro & Verwaltung</h3>
+            <p>Dokumente sortieren, Informationen erfassen und interne Abläufe vereinfachen.</p>
+          </div>
+          <div class="card">
+            <h3>Praxen & Dienstleister</h3>
+            <p>Telefonnotizen strukturieren, Standardtexte vorbereiten und FAQs aufbauen.</p>
+          </div>
+          <div class="card">
+            <h3>Reise- & Serviceunternehmen</h3>
+            <p>Reiseanfragen zusammenfassen und wiederkehrende E-Mails vorbereiten.</p>
+          </div>
+        </div>
+
+        <div class="workflow">
+          <h3>Der einfache Einstieg: KI-Workflow-Check</h3>
+          <p>
+            Gemeinsam analysieren wir, welche Aufgaben regelmäßig Zeit kosten und wo sich eine Automatisierung
+            wirklich lohnt. Sie erhalten konkrete Ideen, eine Priorisierung und klare nächste Schritte.
+          </p>
+        </div>
+
+        <p class="quote">„Erst verstehen. Dann vereinfachen. Dann automatisieren.“</p>
+      </div>
+
+      <div class="back-bottom">
+        <div class="contact">
+          <strong>OptiDuck IT · Andy Thoss</strong><br />
+          Flurstraße 51 · 48301 Nottuln<br />
+          info@optiduck-it.de · +352 661 411 699<br />
+          www.optiduck-it.de
+        </div>
+        <img class="back-qr" src="./assets/qr-optiduck.svg" alt="QR-Code zur OptiDuck IT Website" />
+      </div>
+    </section>
+  </body>
+</html>
