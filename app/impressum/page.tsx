@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ContactDetails } from "@/components/ContactDetails";
-import { LegalPage, LegalSection, LegalTodo } from "@/components/LegalPage";
+import { LegalPage, LegalSection } from "@/components/LegalPage";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -13,38 +13,44 @@ export default function ImprintPage() {
     <LegalPage
       eyebrow="Rechtliche Hinweise"
       title="Impressum"
-      intro="Angaben gemäß § 5 DDG. Bitte ergänzen und prüfen Sie die markierten Stellen vor der Veröffentlichung."
+      intro="Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)."
     >
       <LegalSection title="Anbieter">
         <ContactDetails />
-        {siteConfig.address ? <p>{siteConfig.address}</p> : <LegalTodo>Vollständige ladungsfähige Anschrift</LegalTodo>}
-        <LegalTodo>Rechtsform und vertretungsberechtigte Person prüfen und bei Bedarf ergänzen</LegalTodo>
       </LegalSection>
 
       <LegalSection title="Kontakt">
-        <ContactDetails />
-      </LegalSection>
-
-      <LegalSection title="Umsatzsteuer-ID">
-        <LegalTodo>Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</LegalTodo>
-      </LegalSection>
-
-      <LegalSection title="Register und Aufsicht">
-        <LegalTodo>
-          Falls zutreffend: Register, Registernummer, zuständige Aufsichtsbehörde sowie berufsrechtliche Angaben
-          ergänzen
-        </LegalTodo>
+        <p>
+          E-Mail:{" "}
+          <a className="font-semibold text-ink-900 underline hover:text-accent-700" href={`mailto:${siteConfig.email}`}>
+            {siteConfig.email}
+          </a>
+        </p>
+        <p>
+          Telefon:{" "}
+          <a className="font-semibold text-ink-900 underline hover:text-accent-700" href="tel:+352661411699">
+            {siteConfig.phone}
+          </a>
+        </p>
       </LegalSection>
 
       <LegalSection title="Inhaltlich verantwortlich">
         <p>{siteConfig.owner}</p>
-        {siteConfig.address ? <p>{siteConfig.address}</p> : <LegalTodo>Vollständige Anschrift</LegalTodo>}
+        {siteConfig.address ? <p>{siteConfig.address}</p> : null}
       </LegalSection>
 
-      <LegalSection title="Hinweis">
+      <LegalSection title="Verbraucherstreitbeilegung">
         <p>
-          Diese Seite ist als technisch vorbereitete Vorlage angelegt. Lassen Sie die Pflichtangaben vor dem Livegang
-          rechtlich prüfen und entfernen Sie nicht benötigte Abschnitte.
+          Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Haftung für Inhalte">
+        <p>
+          Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+          verantwortlich. Für fremde Inhalte, auf die wir gegebenenfalls verlinken, ist der jeweilige Anbieter oder
+          Betreiber der verlinkten Seite verantwortlich.
         </p>
       </LegalSection>
     </LegalPage>

@@ -10,6 +10,5 @@ export const siteConfig = {
   address: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || "",
 };
 
-export const contactEmailLabel = siteConfig.email || "E-Mail wird vor Veröffentlichung ergänzt";
-export const contactPhoneLabel = siteConfig.phone || "Telefonnummer wird vor Veröffentlichung ergänzt";
-
+export const contactEmailLabel = siteConfig.email || "info@optiduck-it.de";
+export const contactPhoneLabel = siteConfig.phone || "+352 661 411 699";

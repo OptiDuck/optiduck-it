@@ -36,12 +36,3 @@ export function LegalSection({ title, children }: { title: string; children: Rea
     </section>
   );
 }
-
-export function LegalTodo({ children }: { children: ReactNode }) {
-  return (
-    <p className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900">
-      <strong>Vor Veröffentlichung ergänzen:</strong> {children}
-    </p>
-  );
-}
-

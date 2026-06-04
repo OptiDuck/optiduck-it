@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ContactDetails } from "@/components/ContactDetails";
-import { LegalPage, LegalSection, LegalTodo } from "@/components/LegalPage";
+import { LegalPage, LegalSection } from "@/components/LegalPage";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -13,63 +13,65 @@ export default function PrivacyPage() {
     <LegalPage
       eyebrow="Rechtliche Hinweise"
       title="Datenschutzerklärung"
-      intro="Diese Vorlage beschreibt die aktuell vorbereiteten Funktionen der Website. Lassen Sie sie vor der Veröffentlichung rechtlich prüfen."
+      intro="Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei der Kontaktaufnahme verarbeitet werden."
     >
       <LegalSection title="1. Verantwortlicher">
         <ContactDetails />
-        {siteConfig.address ? <p>{siteConfig.address}</p> : <LegalTodo>Vollständige ladungsfähige Anschrift</LegalTodo>}
       </LegalSection>
 
-      <LegalSection title="2. Hosting und Server-Logfiles">
-        <LegalTodo>
-          Hosting-Anbieter, Serverstandort, verarbeitete Logdaten, Speicherdauer und Rechtsgrundlage entsprechend dem
-          gewählten Hoster eintragen.
-        </LegalTodo>
+      <LegalSection title="2. Hosting">
+        <p>
+          Diese Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet. Beim Aufruf der
+          Website werden technisch erforderliche Daten verarbeitet, damit die Website ausgeliefert und sicher betrieben
+          werden kann.
+        </p>
+        <p>
+          Zu diesen Daten können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten,
+          übertragene Datenmenge, Browser- und Geräteinformationen sowie Referrer-Informationen gehören. Die
+          Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im
+          sicheren, stabilen und effizienten Betrieb der Website.
+        </p>
       </LegalSection>
 
-      <LegalSection title="3. Kontaktformular">
+      <LegalSection title="3. Kontaktaufnahme und Kontaktformular">
         <p>
-          Wenn Sie uns über das Kontaktformular schreiben, verarbeiten wir Ihre eingegebenen Angaben zur Bearbeitung
-          Ihrer Anfrage. Dazu können Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Branche und Ihre Nachricht
-          gehören.
+          Wenn Sie uns per E-Mail, Telefon oder über das Kontaktformular kontaktieren, verarbeiten wir die von Ihnen
+          angegebenen Daten zur Bearbeitung Ihrer Anfrage. Dazu können Name, Unternehmen, E-Mail-Adresse,
+          Telefonnummer, Branche, Angaben zu zeitaufwendigen Prozessen sowie Ihre Nachricht gehören.
         </p>
         <p>
-          Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen oder zur Beantwortung Ihrer Anfrage.
-          Die Angaben werden nur so lange gespeichert, wie dies für die Bearbeitung und gesetzliche
-          Aufbewahrungspflichten erforderlich ist.
+          Die Verarbeitung erfolgt je nach Inhalt der Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO zur
+          Durchführung vorvertraglicher Maßnahmen oder auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur Beantwortung
+          allgemeiner Anfragen. Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind
+          und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
         </p>
         <p>
-          Für den technischen Versand ist eine Anbindung an Resend vorbereitet. Vor Aktivierung ist ein
-          Auftragsverarbeitungsvertrag zu prüfen und diese Erklärung bei Bedarf um Empfänger, Drittlandtransfer und
-          Rechtsgrundlage zu ergänzen.
+          Für den technischen Versand von Kontaktformular-Anfragen kann ein E-Mail-Versanddienst eingesetzt werden. Bei
+          Aktivierung eines solchen Dienstes werden die dafür erforderlichen Angaben ausschließlich zum Versand und zur
+          Bearbeitung der Anfrage verwendet.
         </p>
-        <LegalTodo>
-          Rechtsgrundlage, konkrete Speicherdauer und Informationen zum tatsächlich aktivierten Versanddienst prüfen
-        </LegalTodo>
       </LegalSection>
 
       <LegalSection title="4. Cookies und Tracking">
         <p>
-          Diese Website setzt derzeit keine externen Tracking-Skripte und keine Marketing-Cookies ein. Falls später
-          Analyse-, Karten-, Video- oder Terminbuchungsdienste ergänzt werden, muss dieser Abschnitt vor der
-          Aktivierung angepasst werden.
+          Diese Website setzt derzeit keine externen Tracking-Skripte und keine Marketing-Cookies ein. Es werden keine
+          externen Analyse-, Karten-, Video- oder Terminbuchungsdienste eingebunden.
         </p>
       </LegalSection>
 
       <LegalSection title="5. Ihre Rechte">
         <p>
-          Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere Rechte auf Auskunft, Berichtigung,
-          Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Zudem besteht ein
-          Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde.
+          Sie haben im Rahmen der gesetzlichen Voraussetzungen Rechte auf Auskunft, Berichtigung, Löschung,
+          Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gegen bestimmte Verarbeitungen.
+        </p>
+        <p>
+          Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht
+          sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen Datenschutzrecht verstößt.
         </p>
       </LegalSection>
 
-      <LegalSection title="6. Stand und Prüfung">
+      <LegalSection title="6. Stand">
         <p>Stand: Juni 2026</p>
-        <p>
-          Diese Datenschutzerklärung ist eine technische Arbeitsvorlage und keine Rechtsberatung. Prüfen Sie sie vor
-          dem Livegang anhand des tatsächlichen Hostings und der aktivierten Dienste.
-        </p>
       </LegalSection>
     </LegalPage>
   );
