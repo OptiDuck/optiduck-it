@@ -222,7 +222,7 @@ export default function WorkflowCheckOfferPage() {
           <div className="offer-info-grid">
             <InfoCard label="Dauer" value="90–120 Minuten" />
             <InfoCard label="Format" value="Online oder vor Ort" />
-            <InfoCard label="Region" value="Münster & Umgebung" />
+            <InfoCard label="Region" value="Nottuln, Münster & Umgebung" />
             <InfoCard label="Preis" value="390 € netto" />
           </div>
 
@@ -359,7 +359,7 @@ export default function WorkflowCheckOfferPage() {
 
           <div className="offer-final-facts">
             <InfoCard label="Dauer" value="90–120 Minuten" />
-            <InfoCard label="Format" value="Online oder vor Ort in Münster & Umgebung" />
+            <InfoCard label="Format" value="Online oder vor Ort in Nottuln, Münster & Umgebung" />
           </div>
 
           <div className="offer-final-included">
@@ -386,4 +386,3 @@ export default function WorkflowCheckOfferPage() {
     </main>
   );
 }
-

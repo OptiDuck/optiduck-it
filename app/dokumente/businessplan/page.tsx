@@ -316,7 +316,7 @@ export default function BusinessPlanDocumentPage() {
           <h1>Businessplan</h1>
           <h2>OptiDuck IT</h2>
           <p className="businessplan-cover-subtitle">
-            KI-Workflows & Automationen für KMU in Münster und Umgebung
+            KI-Workflows & Automationen für KMU in Nottuln, Münster und Umgebung
           </p>
 
           <div className="businessplan-cover-data">
@@ -338,7 +338,7 @@ export default function BusinessPlanDocumentPage() {
         <SectionTitle number="01">Executive Summary</SectionTitle>
         <p>
           OptiDuck IT ist ein geplantes Einzelunternehmen von Andy Thoss mit Fokus auf KI-Workflows und
-          Automationen für kleine und mittlere Unternehmen in Münster und Umgebung.
+          Automationen für kleine und mittlere Unternehmen in Nottuln, Münster und Umgebung.
         </p>
         <p>
           Das Unternehmen unterstützt KMU, Praxen, Dienstleister, Reise- und Serviceunternehmen dabei,
@@ -362,7 +362,7 @@ export default function BusinessPlanDocumentPage() {
           />
         </div>
         <p>
-          Die Gründung erfolgt zunächst lokal mit Fokus auf Münster und Umgebung. Nach Aufbau erster
+          Die Gründung erfolgt zunächst lokal mit Fokus auf Nottuln, Münster und Umgebung. Nach Aufbau erster
           Referenzen und wiederkehrender Kundenbeziehungen ist eine Ausweitung auf überregionale, remote
           betreute Kunden geplant.
         </p>
@@ -444,7 +444,7 @@ export default function BusinessPlanDocumentPage() {
         <OfferCard title="KI-Workflow-Check" price={config.prices.workflowCheck}>
           <div className="businessplan-meta-row">
             <span>Dauer: 90–120 Minuten</span>
-            <span>Format: Online oder vor Ort in Münster und Umgebung</span>
+            <span>Format: Online oder vor Ort in Nottuln, Münster und Umgebung</span>
           </div>
           <p>
             Im KI-Workflow-Check werden wiederkehrende Büro-, Kunden- und Verwaltungsprozesse analysiert.
@@ -478,7 +478,7 @@ export default function BusinessPlanDocumentPage() {
 
       <BusinessPlanPage page={7}>
         <SectionTitle number="05">Zielgruppe</SectionTitle>
-        <p>Die primäre Zielgruppe sind kleine und mittlere Unternehmen in Münster und Umgebung.</p>
+        <p>Die primäre Zielgruppe sind kleine und mittlere Unternehmen in Nottuln, Münster und Umgebung.</p>
         <p>Besonders relevant sind:</p>
         <BulletList items={audiences} columns />
         <p>
@@ -530,7 +530,7 @@ export default function BusinessPlanDocumentPage() {
           <article>
             <h3>Lokaler Fokus</h3>
             <p>
-              Der Start erfolgt bewusst in Münster und Umgebung. Dadurch entsteht Nähe zu KMU, Praxen und
+              Der Start erfolgt bewusst in Nottuln, Münster und Umgebung. Dadurch entsteht Nähe zu KMU, Praxen und
               Dienstleistern.
             </p>
           </article>
@@ -618,7 +618,7 @@ export default function BusinessPlanDocumentPage() {
         <p>Der Gründer arbeitet zunächst allein und übernimmt:</p>
         <BulletList items={founderResponsibilities} columns />
         <p>
-          Der Unternehmenssitz liegt in Nottuln mit Fokus auf Münster und Umgebung. Leistungen können
+          Der Unternehmenssitz liegt in Nottuln mit Fokus auf Nottuln, Münster und Umgebung. Leistungen können
           sowohl vor Ort als auch remote erbracht werden.
         </p>
         <SubsectionTitle>Geplante organisatorische Grundlagen</SubsectionTitle>

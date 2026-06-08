@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "OptiDuck IT",
     short_name: "OptiDuck IT",
-    description: "KI-Workflows und Automationen für KMU in Münster und Umgebung.",
+    description: "KI-Workflows und Automationen für KMU in Nottuln, Münster und Umgebung.",
     start_url: "/",
     display: "standalone",
     background_color: "#10101a",
@@ -18,4 +18,3 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
   };
 }
-

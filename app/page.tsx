@@ -118,10 +118,10 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
         <div>
           <p className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-accent-500">
-            KI Beratung Münster & Umgebung
+            KI-Beratung Nottuln, Münster & Umgebung
           </p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl lg:leading-[1.08]">
-            KI-Workflows & Automationen für KMU in Münster
+            KI-Workflows & Automationen für KMU in Nottuln & Münster
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
             OptiDuck IT hilft kleinen und mittleren Unternehmen, wiederkehrende Büro-, Kunden- und
@@ -336,7 +336,7 @@ function AudienceSection() {
         <SectionHeading
           eyebrow="Für wen"
           title="Für wen ist OptiDuck IT geeignet?"
-          intro="OptiDuck IT richtet sich an kleine und mittlere Unternehmen in Münster und Umgebung, die KI praktisch nutzen möchten."
+          intro="OptiDuck IT richtet sich an kleine und mittlere Unternehmen in Nottuln, Münster und Umgebung, die KI praktisch nutzen möchten."
         />
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((audience) => (
@@ -472,7 +472,7 @@ function ContactSection() {
           <SectionHeading
             eyebrow="Kontakt"
             title="Lassen Sie uns herausfinden, wo KI in Ihrem Unternehmen sinnvoll helfen kann"
-            intro="Sie möchten wissen, welche Prozesse in Ihrem Unternehmen automatisiert werden können? Dann starten wir mit einem kostenlosen und unverbindlichen Erstgespräch von etwa 20 Minuten — online oder vor Ort in Münster."
+            intro="Sie möchten wissen, welche Prozesse in Ihrem Unternehmen automatisiert werden können? Dann starten wir mit einem kostenlosen und unverbindlichen Erstgespräch von etwa 20 Minuten — online oder vor Ort in Nottuln, Münster und Umgebung."
           />
           <div className="mt-8 space-y-3">
             <ContactDetails />

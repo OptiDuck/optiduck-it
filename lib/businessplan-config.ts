@@ -2,7 +2,7 @@ export const businessPlanConfig = {
   documentDate: "Juni 2026",
   plannedStart: "August 2026",
   legalForm: "Einzelunternehmen, geplant",
-  location: "Nottuln / Münster und Umgebung",
+  location: "Nottuln, Münster und Umgebung",
   website: "www.optiduck-it.de",
   email: "info@optiduck-it.de",
   prices: {
